@@ -5,3 +5,13 @@
 
 ## 과제 제출 과정
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
+
+## 추가 구현 사항
+    1. 일급콜렉션을활용해구현한다.
+    - 참고문서 : https://developerfarm.wordpress.com/2012/02/01/object_calisthenics_/
+    2. 모든원시값과문자열을포장한다.
+    - 참고문서 : https://developerfarm.wordpress.com/2012/01/27/object_calisthenics_4
+
+## 구현 사항
+    - [x] 쉼표로 구분되는 자동차 리스트 객체를 만들 수 있다.
+    - [x] 자동차 객체는 (이름, 간 거리) 로 나타낼 수 있다.
