@@ -1,28 +1,41 @@
 package racinggame;
 
-import jdk.internal.jimage.ImageReader;
+import nextstep.utils.Randoms;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RacingCars {
 
-    private ArrayList<RacingCar> racingCar;
+    private ArrayList<RacingCar> racingCars;
 
-    public RacingCars(String test) {
-        String[] split = test.split(",");
-        ArrayList<RacingCar> res = new ArrayList<>();
-        for (int i = 0; i < split.length; i++) {
-            res.add(new RacingCar(split[i]));
-        }
-        this.racingCar = res;
+    public RacingCars(String carString) {
+        this.racingCars = getRacingCars(carString);
     }
+
+    private ArrayList<RacingCar> getRacingCars(String carString) {
+        String[] split_string = carString.split(",");
+        ArrayList<RacingCar> res = new ArrayList<>();
+        for (int i = 0; i < split_string.length; i++) {
+            res.add(new RacingCar(split_string[i]));
+        }
+        return res;
+    }
+
 
     public int getSize() {
-        return this.racingCar.size();
+        return this.racingCars.size();
     }
 
-    public ArrayList<RacingCar> getCars() {
-        return this.racingCar;
+    public ArrayList<RacingCar> getRacingCars() {
+        return this.racingCars;
     }
+
+    public RacingResult race() {
+        for (int i = 0; i < racingCars.size(); i++) {
+            int race = racingCars.get(i).race(Randoms.pickNumberInRange(1, 9));
+        }
+        return new RacingResult(racingCars);
+    }
+
+
 }
