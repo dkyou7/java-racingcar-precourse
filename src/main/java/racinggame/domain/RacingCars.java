@@ -1,4 +1,4 @@
-package racinggame;
+package racinggame.domain;
 
 import nextstep.utils.Randoms;
 
@@ -32,7 +32,7 @@ public class RacingCars {
 
     public RacingResult race() {
         for (int i = 0; i < racingCars.size(); i++) {
-            int race = racingCars.get(i).race(Randoms.pickNumberInRange(1, 9));
+            int race = racingCars.get(i).race(Randoms.pickNumberInRange(0, 9));
         }
         return new RacingResult(racingCars);
     }
