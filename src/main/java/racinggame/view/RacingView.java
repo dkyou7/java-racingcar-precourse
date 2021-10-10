@@ -6,6 +6,7 @@ import racinggame.domain.RacingResult;
 import racinggame.domain.Winner;
 
 import static racinggame.Message.*;
+import static racinggame.Rule.ZERO;
 
 public class RacingView {
 
@@ -38,7 +39,7 @@ public class RacingView {
 
     public void race() {
         System.out.println("실행 결과");
-        for (int i = 0; i < racingTime; i++) {
+        for (int i = ZERO; i < racingTime; i++) {
             RacingResult racingResult = racingCars.race();
             racingResult.printResult();
         }

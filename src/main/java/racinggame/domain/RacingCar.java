@@ -1,6 +1,11 @@
 package racinggame.domain;
 
-import static racinggame.Message.*;
+import static racinggame.Message.MESSAGE_VALIDATE_NAME;
+import static racinggame.Message.MESSAGE_VALIDATE_MIN_LENGTH;
+import static racinggame.Message.formatErrorMessage;
+import static racinggame.Rule.ZERO;
+import static racinggame.Rule.RULE_LIMIT_NAME;
+import static racinggame.Rule.RULE_MOVE_SPEED;
 
 public class RacingCar implements Comparable<RacingCar>{
     private final String name;
@@ -13,10 +18,10 @@ public class RacingCar implements Comparable<RacingCar>{
     }
 
     private void validateName(String source) {
-        if (source.length()==0){
+        if (source.length()== ZERO){
             throw new IllegalArgumentException(formatErrorMessage(MESSAGE_VALIDATE_MIN_LENGTH));
         }
-        if (source.length()>5){
+        if (source.length()> RULE_LIMIT_NAME){
             throw new IllegalArgumentException(formatErrorMessage(MESSAGE_VALIDATE_NAME));
         }
     }
@@ -29,15 +34,14 @@ public class RacingCar implements Comparable<RacingCar>{
         return this.distance_view.length();
     }
 
-    public int race(int speed) {
+    public void race(int speed) {
         if (isMovable(speed)){
             distance_view += "-";
         }
-        return distance_view.length();
     }
 
     public boolean isMovable(int speed){
-        return speed >= 4;
+        return speed >= RULE_MOVE_SPEED;
     }
 
     @Override

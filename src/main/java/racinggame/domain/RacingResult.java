@@ -2,6 +2,8 @@ package racinggame.domain;
 
 import java.util.ArrayList;
 
+import static racinggame.Rule.ZERO;
+
 public class RacingResult {
 
     private final ArrayList<RacingCar> racingCars;
@@ -12,7 +14,7 @@ public class RacingResult {
 
 
     public void printResult() {
-        for (int i = 0; i < racingCars.size(); i++) {
+        for (int i = ZERO; i < racingCars.size(); i++) {
             System.out.println(racingCars.get(i).toString());
         }
         System.out.println();

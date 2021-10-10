@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static racinggame.Rule.ZERO;
+
 public class Winner {
     private final RacingCars racingCars;
     private final int findMaxLen;
@@ -11,13 +13,13 @@ public class Winner {
 
     public Winner(RacingCars racingCars) {
         Collections.sort(racingCars.getRacingCars());
-        this.findMaxLen = racingCars.getRacingCars().get(0).getDistance();
+        this.findMaxLen = racingCars.getRacingCars().get(ZERO).getDistance();
         this.racingCars = racingCars;
     }
 
     public void findWinnerName() {
         List<String> res = new ArrayList<>();
-        for (int i = 0; i < racingCars.getSize(); i++) {
+        for (int i = ZERO; i < racingCars.getSize(); i++) {
             extractedWinner(res, i);
         }
         this.winnerName = res;

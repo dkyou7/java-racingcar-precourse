@@ -4,11 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racinggame.Message;
-import racinggame.controller.GameController;
-import racinggame.domain.RacingCar;
-import racinggame.domain.RacingCars;
-import racinggame.domain.RacingResult;
-import racinggame.domain.Winner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
